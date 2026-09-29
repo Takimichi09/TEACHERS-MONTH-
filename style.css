@@ -1,0 +1,174 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  color: #333;
+}
+
+/* Background floating emojis */
+.decorations span {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.15;
+  user-select: none;
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+.decorations span:nth-child(1) { top: 10%; left: 8%; animation-delay: 0s; }
+.decorations span:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; }
+.decorations span:nth-child(3) { bottom: 15%; left: 12%; animation-delay: 2s; }
+.decorations span:nth-child(4) { bottom: 20%; right: 8%; animation-delay: 3s; }
+.decorations span:nth-child(5) { top: 50%; left: 4%; animation-delay: 1.5s; }
+
+@keyframes float {
+  from { transform: translateY(0px) rotate(0deg); }
+  to { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Card Container */
+.container {
+  width: 100%;
+  max-width: 650px;
+  z-index: 1;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Banner */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.tribute-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .tribute-img {
+  transform: scale(1.03);
+}
+
+.badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #d9534f;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Body Content */
+.content {
+  padding: 30px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 18px;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #e74c3c;
+  margin: 0 auto 20px auto;
+  border-radius: 2px;
+}
+
+.message {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Audio Player Section */
+.audio-section {
+  background: #fdf6f0;
+  border: 1px dashed #f39c12;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.audio-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d35400;
+  margin-bottom: 10px;
+}
+
+audio {
+  width: 100%;
+  max-width: 400px;
+  height: 38px;
+  outline: none;
+}
+
+/* Footer Signature */
+.footer {
+  font-size: 0.95rem;
+  color: #888;
+  line-height: 1.5;
+}
+
+.footer strong {
+  color: #333;
+}
+
+/* Mobile Responsive */
+@media (max-width: 300px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .image-wrapper {
+    height: 200px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+}
